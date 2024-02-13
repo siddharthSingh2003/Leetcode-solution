@@ -1,6 +1,7 @@
 class Solution {
 public:
     string firstPalindrome(vector<string>& words) {
+        ios_base::sync_with_stdio(false);
         for (const string& word : words) {
             if (isPalindrome(word)) {
                 return word;
