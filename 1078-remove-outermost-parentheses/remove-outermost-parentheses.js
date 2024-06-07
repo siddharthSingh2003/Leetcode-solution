@@ -2,23 +2,23 @@
  * @param {string} s
  * @return {string}
  */
-var removeOuterParentheses = function(s) {
+var removeOuterParentheses = function(S) {
+    let parenthesCount = 0;
     let result = "";
-        let opened = 0;
-        
-        for (const char of s) {
-            if (char === '(') {
-                opened++;
-                if (opened > 1) {
-                    result += char;
-                }
-            } else {
-                opened--;
-                if (opened > 0) {
-                    result += char;
-                }
+    
+    for (const letter of S) {
+        if (letter === "(") {
+            if (parenthesCount) {
+                result += letter;
+            }
+            parenthesCount++;
+        } else {
+            parenthesCount--;
+            if (parenthesCount) {
+                result += letter;
             }
         }
-        
-        return result;
+    }
+    
+    return result;
 };
