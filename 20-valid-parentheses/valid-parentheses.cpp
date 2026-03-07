@@ -19,10 +19,11 @@ public:
                     st.pop();
                     continue;
                 }
+                else return false;
             }
-            if(s[i]==')' || s[i]== '}' || s[i]==']'){
-                return false;
-            }
+            // if(s[i]==')' || s[i]== '}' || s[i]==']'){
+            //     return false;
+            // }
         
         }
         return st.empty();
