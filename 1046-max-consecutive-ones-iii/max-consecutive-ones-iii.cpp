@@ -20,22 +20,42 @@ public:
 
 
 
-        int left=0;
-        int zeros =0;
-        int maxLen =0; 
+        // int left=0;
+        // int zeros =0;
+        // int maxLen =0; 
 
-        for(int right =0; right<nums.size(); right++){
+        // for(int right =0; right<nums.size(); right++){
+        //     if(nums[right]==0){
+        //         zeros++;
+        //     }
+
+        //     while(zeros>k){
+        //         if(nums[left]==0){
+        //             zeros--;
+        //         }
+        //         left++;
+        //     }
+
+        //     maxLen = max(maxLen, right-left+1);
+        // }
+        // return maxLen;
+
+
+
+        int left=0; 
+        int zero=0;
+        int maxLen=0;
+
+        for(int right=0; right<nums.size();right++){
             if(nums[right]==0){
-                zeros++;
+                zero++;
             }
-
-            while(zeros>k){
+            if(zero>k){
                 if(nums[left]==0){
-                    zeros--;
+                    zero--;
                 }
                 left++;
             }
-
             maxLen = max(maxLen, right-left+1);
         }
         return maxLen;
